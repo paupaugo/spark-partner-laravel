@@ -1,0 +1,41 @@
+{
+  "menu": [
+    {
+      "url": "/",
+      "name": "Dashboards",
+      "icon": "home",
+      "slug": "dashboard-ecommerce"
+    },
+    {
+      "url": "/request-partner",
+      "name": "Request Partner",
+      "icon": "user",
+      "slug": "request-partner"
+    },
+    {
+      "url": "/request-booker",
+      "name": "Request Booker",
+      "icon": "users",
+      "slug": "request-booker"
+    },
+    {
+      "url": "/analytics",
+      "name": "Analytics",
+      "icon": "users",
+      "slug": "analytics"
+    },
+    {
+      "url": "/content-management",
+      "name": "Content Management",
+      "icon": "users",
+      "slug": "content-management"
+    },
+    {
+      "url": "/settings",
+      "name": "Settings",
+      "icon": "users",
+      "slug": "settings"
+    }
+    
+  ]
+}

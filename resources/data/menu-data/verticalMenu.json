@@ -1,0 +1,53 @@
+{
+  "menu": [
+    {
+      "url": "/",
+      "name": "Dashboards",
+      "icon": "home",
+      "slug": "dashboard-analytics"
+    },
+    {
+      "url": "/location",
+      "name": "Locations",
+      "icon": "map-pin",
+      "slug": "location"
+    },
+    {
+      "url": "/request",
+      "name": "Requests",
+      "icon": "arrow-down-circle",
+      "slug": "request"
+    },
+    {
+      "url": "/report",
+      "name": "Reports",
+      "icon": "file-text",
+      "slug": "reports"
+    },
+    {
+      "url": "/profit",
+      "name": "Profits",
+      "icon": "dollar-sign",
+      "slug": "profit"
+    },
+    {
+      "url": "/referred-profit",
+      "name": "Referred Profits",
+      "icon": "user-plus",
+      "slug": "referred-profit"
+    },
+    {
+      "url": "/activity-log",
+      "name": "Activity Log",
+      "icon": "activity",
+      "slug": "activity-log"
+    },
+    {
+      "url": "/profile",
+      "name": "Profile",
+      "icon": "user",
+      "slug": "profile"
+    }
+    
+  ]
+}

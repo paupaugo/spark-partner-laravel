@@ -1,0 +1,44 @@
+/*================================================================================
+	Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
+	Version: 2.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+================================================================================
+
+NOTE:
+------
+PLACE HERE YOUR OWN SCSS CODES AND IF NEEDED, OVERRIDE THE STYLES FROM THE OTHER STYLESHEETS.
+WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR STYLES IT'S BETTER LIKE THIS.  */
+#profileDisplay { display: block; height: 400px; width: 100%; margin: 0px auto; background-color: #F7F7F7; }
+.img-placeholder {
+  width: 60%;
+  color: white;
+  height: 100%;
+  background: black;
+  opacity: .7;
+  height: 210px;
+  border-radius: 50%;
+  z-index: 2;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+}
+.card-congratulations{
+  background: linear-gradient(
+118deg, #D0F7FF, #D0F7FF) !important;
+    color: #fff;
+}
+.card-parking-lot {
+  background: linear-gradient(
+118deg, #D0F1D0, #D0F1D0) !important;
+    color: #fff;
+}
+.card-profits {
+  background: linear-gradient(
+118deg, #FFD8FA, #FFD8FA) !important;
+    color: #fff;
+}
+.match-height > [class*=col] > .card {
+  flex: none !important;
+}

@@ -1,0 +1,12 @@
+{
+  "listItems": [
+    { "name": "Dashboard", "url": "dashboard/analytics", "icon": "home" },
+    { "name": "Locations", "url": "location", "icon": "map-pin" },
+    { "name": "Requests", "url": "request", "icon": "arrow-down-circle" },
+    { "name": "Reports", "url": "report", "icon": "file-text" },
+    { "name": "Profits", "url": "profit", "icon": "doller-sign" },
+    { "name": "Referred Profits", "url": "referred-profit", "icon": "user-plus" },
+    { "name": "Activity Log", "url": "activity-log", "icon": "activity" },
+    { "name": "Profile", "url": "profile", "icon": "user" }
+  ]
+}
