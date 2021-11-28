@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class LocationController extends Controller
+class ProfitController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +16,7 @@ class LocationController extends Controller
         //
         $pageConfigs = ['pageHeader' => false];
 
-        return view('/content/location/location', ['pageConfigs' => $pageConfigs]);
+        return view('/content/profit/profit', ['pageConfigs' => $pageConfigs]);
     }
 
     /**

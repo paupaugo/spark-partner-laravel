@@ -14,6 +14,9 @@ class RequestController extends Controller
     public function index()
     {
         //
+        $pageConfigs = ['pageHeader' => false];
+
+        return view('/content/request/request', ['pageConfigs' => $pageConfigs]);
     }
 
     /**

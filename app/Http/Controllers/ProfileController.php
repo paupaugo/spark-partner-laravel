@@ -14,6 +14,9 @@ class ProfileController extends Controller
     public function index()
     {
         //
+        $pageConfigs = ['pageHeader' => false];
+
+        return view('/content/profile/profile', ['pageConfigs' => $pageConfigs]);
     }
 
     /**

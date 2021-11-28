@@ -14,6 +14,9 @@ class ReferredProfitController extends Controller
     public function index()
     {
         //
+        $pageConfigs = ['pageHeader' => false];
+
+        return view('/content/referred-profit/referred-profit', ['pageConfigs' => $pageConfigs]);
     }
 
     /**

@@ -14,6 +14,9 @@ class ReportController extends Controller
     public function index()
     {
         //
+        $pageConfigs = ['pageHeader' => false];
+
+        return view('/content/report/report', ['pageConfigs' => $pageConfigs]);
     }
 
     /**

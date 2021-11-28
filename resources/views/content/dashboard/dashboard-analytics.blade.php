@@ -111,14 +111,11 @@
     <!-- List DataTable -->
     <div class="row">
       <div class="col-7">
-        <div class="card sparknews_container">
+        <div class="card sparknews_container pt-2 pl-1">
           <h5><b>Spark News</b></h5>
 
           <div class="card">
             <div class="card-body">
-              <div class="spark-news-carousel text-center">
-                <b>SPARK</b>
-              </div>
               <div id="demo" class="carousel slide" data-ride="carousel" data-interval="false">
                 <ul class="carousel-indicators">
                   <li data-target="#demo" data-slide-to="0" class="active"></li>
@@ -154,15 +151,15 @@
         </div>
       </div>
       <div class="col-5">
-        <div class="card sparknews_container">
+        <div class="card sparknews_container pt-2 pl-1 pr-1">
           <h5><b>Spark Status</b></h5>
           <div class="card card-profits">
             <div class="card-body pr-0 p-0">
               <div class="row">
-                <div class="col-lg-5">
-                    <h5 class="m-1"><b>Parking Total</b></h5>
+                <div class="col-lg-6">
+                  <h5 class="m-1"><b>Parking Total</b></h5>
                 </div>
-                <div class="col-lg-7">
+                <div class="col-lg-6">
                   <div class="pt-0 mr-1 text-right">
                     <h1 class="mt-1"><b>54</b></h1>
                   </div>
@@ -173,10 +170,10 @@
           <div class="card card-available-parking">
             <div class="card-body pr-0 p-0">
               <div class="row">
-                <div class="col-lg-5">
-                    <h5 class="m-1"><b>Available Parking</b></h5>
+                <div class="col-lg-6">
+                  <h5 class="m-1"><b>Available Parking</b></h5>
                 </div>
-                <div class="col-lg-7">
+                <div class="col-lg-6">
                   <div class="pt-0 mr-1 text-right">
                     <h1 class="mt-1"><b>20</b></h1>
                   </div>
@@ -187,10 +184,10 @@
           <div class="card card-parking-lot">
             <div class="card-body pr-0 p-0">
               <div class="row">
-                <div class="col-lg-5">
-                    <h5 class="m-1"><b>Occupied Parking</b></h5>
+                <div class="col-lg-6">
+                  <h5 class="m-1"><b>Occupied Parking</b></h5>
                 </div>
-                <div class="col-lg-7">
+                <div class="col-lg-6">
                   <div class="pt-0 mr-1 text-right">
                     <h1 class="mt-1"><b>05</b></h1>
                   </div>
@@ -200,16 +197,16 @@
           </div>
         </div>
       </div>
-  </div>
-  <!--/ List DataTable -->
     </div>
+    <!--/ List DataTable -->
+  </div>
 
     <div class="col-lg-3 advertisement_slot">
       <!-- QRCODE Card starts -->
         <div class="col-lg-12 col-sm-12 col-12">
-          <div class="card bg-white pt-2 pl-1 pr-1 pb-2">
+          <div class="card bg-white pt-1 pl-1 pr-1 pb-2">
             <div class="card-body text-center">
-              {!! QrCode::size(150)->generate('RemoteStack') !!}
+              {!! QrCode::size(140)->generate('RemoteStack') !!}
             </div>
             <div class="card-text text-center">
               <h5><b>Refer a friend</b></h5>
