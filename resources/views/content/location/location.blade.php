@@ -139,6 +139,7 @@
                   <div class="form-group">
 										<label for="email">Email</label>
 										<input type="text" name="email" class="form-control" id="email" readonly autocomplete="off" required>
+                    
 									</div>
                   <div class="form-group">
 										<label for="contact_no">Contact No.</label>

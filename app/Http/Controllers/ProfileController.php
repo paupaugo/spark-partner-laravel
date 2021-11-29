@@ -3,9 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Repositories\IProfileRepository;
+use Illuminate\Support\Facades\Auth;
+
 
 class ProfileController extends Controller
 {
+    public $partner;
+    
+    public function __construct(IProfileRepository $partner)
+    {
+        $this->partner = $partner;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -13,10 +22,12 @@ class ProfileController extends Controller
      */
     public function index()
     {
+        $partner_id = Auth::user()->owner_account_id;
+        $partnerDetails = $this->partner->getProfileById($partner_id);
         //
         $pageConfigs = ['pageHeader' => false];
 
-        return view('/content/profile/profile', ['pageConfigs' => $pageConfigs]);
+        return view('/content/profile/profile', ['pageConfigs' => $pageConfigs], compact('partnerDetails'));
     }
 
     /**
