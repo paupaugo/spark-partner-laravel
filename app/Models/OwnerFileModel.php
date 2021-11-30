@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ContentManagement extends Model
+class OwnerFileModel extends Model
 {
     use HasFactory;
 
-    protected $table = "tbl_content";
-    protected $primaryKey = 'content_id';
+    protected $table = "tbl_owner_files";
+    protected $primaryKey = 'files_id';
 }

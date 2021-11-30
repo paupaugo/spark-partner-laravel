@@ -31,16 +31,16 @@
                                 <div class="col-lg-2 text-center col-md-2 col-sm-6 pt-1">
                                     <img  src="{{asset('images/avatars/spark-avatar.jpg')}}" alt="avatar" height="100" width="100">
                                 </div>
-                                <div class="col-lg-7 col-md-2 col-sm-6 pt-1">
+                                <div class="col-lg-7 col-md-7 col-sm-7 pt-1">
                                
                                     <h3 class="text-bold"><b>{{ $object->owner_firstname.' '.$object->owner_middlename.' '.$object->owner_lastname }}</b></h3>
                                     <p>{{ $object->owner_email }}</p>
                                     <p>{{ '+63'.$object->owner_contact_no }}</p>
                                 
                                 </div>
-                                <div class="col-lg-3 col-md-2 col-sm-4 pt-1 text-center ">
+                                <div class="col-lg-3 col-md-3 col-sm-3 pt-1 text-center ">
                                     <input type="hidden" value="{{ $object->owner_id }}" id="owner_id"/>
-                                    <button type="button" class="btn btn-danger">Delete my account</button>
+                                    <button type="button" class="btn btn-danger" disabled>Delete my account</button>
                                 </div>
                             </div>
                         </div>
@@ -106,8 +106,38 @@
                     <h4>Documents</h4>
                     <p>Please add documents needed for your parking space to be validated as a spark parking partner. Refer to infographics for the specifications needed to be approved.</p>
                     <p> Samples are:<b> land title, proof of ownership of land, certification from barangay</b></p>
-                    
-                    
+                    <div class="container lst">
+                        @if (count($errors) > 0)
+                        <div class="alert alert-danger">
+                            <strong>Sorry!</strong> There were more problems with your HTML input.<br><br>
+                            <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                            </ul>
+                        </div>
+                        @endif
+
+
+                        @if(session('success'))
+                        <div class="alert alert-success">
+                        {{ session('success') }}
+                        </div> 
+                        @endif
+                        <form method="post" action="{{url('file')}}" enctype="multipart/form-data">
+                        {{csrf_field()}}
+                        <div id="files-container">
+                            <div class="hdtuto  input-group control-group lst increment" >
+                                <input type="file" name="filenames[]" class="myfrm form-control">
+                                <div class="input-group-btn"> 
+                                    <button class="btn btn-success" type="button"><i data-feather="plus-circle" class="mr-1"></i>ADD</button>
+                                </div>
+                            </div>
+                        </div>  
+                            <button type="submit" class="btn btn-primary float-right mt-2" >Submit</button>
+                        </form>        
+                    </div>
+                                            
                 </div>
             </div>
         </div>
@@ -139,4 +169,18 @@
   <script src="{{ asset(mix('js/scripts/pages/dashboard-analytics.js')) }}"></script>
   <script src="{{ asset(mix('js/scripts/pages/app-invoice-list.js')) }}"></script>
   <script src="{{ asset(mix('js/scripts/forms/form-input-mask.js')) }}"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $(".btn-success").click(function(){
+        var newNodeContainer = "<div class='hdtuto  input-group control-group lst increment' style='margin-top:10px'>";
+      var divContent = "<input type='file' name='filenames[]' class='myfrm form-control'><div class='input-group-btn'><button class='btn btn-danger' type='button'><i class='fldemo glyphicon glyphicon-remove'></i> Remove</button></div>";
+      var divClose = "</div>"; 
+      $('#files-container').append(newNodeContainer+divContent+divClose);
+      });
+      $('#files-container').on('click','.btn-danger', function () {
+
+$(this).closest('.increment').remove();
+});
+    });
+</script>
 @endsection

@@ -8,7 +8,7 @@ interface IProfileRepository
 
     public function getProfileById($partner_id);
 
-    public function createOrUpdateProfile($partner_id, $action);
+    public function createOrUpdateProfile($partner_id, $collection = []);
 
     public function deleteProfile($partner_id);
 }

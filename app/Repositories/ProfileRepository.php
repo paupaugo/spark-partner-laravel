@@ -3,8 +3,10 @@
 namespace App\Repositories;
 
 use App\Models\ProfileModel;
+use App\Models\OwnerFileModel;
 use App\Repositories\IProfileRepository;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 class ProfileRepository implements IProfileRepository
 {
@@ -20,39 +22,23 @@ class ProfileRepository implements IProfileRepository
         return ProfileModel::where('owner_id',$partner_id)->get();
     }
 
-    public function createOrUpdateProfile($partner_id, $action)
+    public function createOrUpdateProfile($partner_id, $collection = [])
     {   
         if(is_null($partner_id)) {
-            // $partnerpartner = new RequestPartner;
-            // $user->name = $collection['name'];
-            // $user->email = $collection['email'];
-            // $user->password = Hash::make('password');
-            // return $user->save();
-        }
-        $partner = RequestPartner::find($partner_id);
-        if($action == 'approve'){
-            $partner->owner_approval_status = 1;
-            $is_saved = $partner->save();
-            if ($is_saved) {
-                // success
-                return "approved";
-            } 
-            else {
-                // failure 
-                return "failed";
+            if($collection['filenames']) {
+                foreach($collection['filenames'] as $file) {
+                    $name = time().'.'.$file->extension();
+                    $file->move(public_path().'/files/', $name);  
+                    $data[] = $name;  
+                }
             }
-        }
-        else {
-            $partner->owner_approval_status = 0;
-            $is_saved = $partner->save();
-            if ($is_saved) {
-                // success
-                return "declined";
-            } 
-            else {
-                // failure 
-                return "failed";
-            }
+
+            $file= new OwnerFileModel();
+            $file->files_owner_id = Auth::user()->owner_account_id;
+            $file->files_name=json_encode($data);
+            $file->save();
+        
+            return back()->with('success', 'Data Your files has been successfully added');
         }
 
         

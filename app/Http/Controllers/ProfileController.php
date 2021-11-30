@@ -46,9 +46,27 @@ class ProfileController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $partner_id = null)
     {
         //
+        $this->validate($request, [
+            'filenames' => 'required',
+            'filenames.*' => 'mimes:doc,pdf,docx,zip'
+    ]);
+
+    $collection = $request->except(['_token','_method']);
+
+    if( ! is_null($partner_id ) ) 
+        {
+            $files_return = $this->partner->createOrUpdateProfile($content_id, $collection);
+        }
+        else
+        {
+            $files_return = $this->partner->createOrUpdateProfile($content_id = null, $collection);
+        }
+
+        return $files_return;
+
     }
 
     /**

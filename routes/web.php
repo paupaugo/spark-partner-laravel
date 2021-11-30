@@ -60,7 +60,9 @@ Route::group(['prefix' => 'auth'], function () {
 /* Route Authentication Pages */
 
 
-  Route::get('profile', [ProfileController::class,'index'])->name('profile');
+  Route::get('profile', [ProfileController::class,'index'])->name('profile')->middleware('verified');
+  Route::post('file', [ProfileController::class,'store'])->name('file')->middleware('verified');
+
   Route::get('location', [LocationController::class,'index'])->name('location');
   Route::get('request', [RequestController::class,'index'])->name('request');
   Route::get('profit', [ProfitController::class,'index'])->name('profit');
