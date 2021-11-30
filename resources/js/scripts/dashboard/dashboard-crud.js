@@ -18,9 +18,6 @@
   
     if (dt_parking_activites_table.length) {
       var dt_basic = dt_parking_activites_table.DataTable({
-        drawCallback: function( settings ) {
-          feather.replace();
-        },
         columns: [
             // used for sorting so will hide this column
           { data: 'name' },
