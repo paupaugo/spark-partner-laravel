@@ -24,100 +24,22 @@
   <div class="row">
     <div class="col-12">
       <div class="card">
-        <div class="card-header">
-          <h4 class="card-title">Partner List</h4>
-        </div>
-        <div class="card-body">
-          <ul class="nav nav-tabs" role="tablist">
-              <li class="nav-item">
-                <a
-                  class="nav-link active"
-                  id="pending-tab"
-                  data-toggle="tab"
-                  href="#pending"
-                  aria-controls="pending"
-                  role="tab"
-                  aria-selected="true"
-                  >Pending</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link"
-                  id="approved-tab"
-                  data-toggle="tab"
-                  href="#approved"
-                  aria-controls="approved"
-                  role="tab"
-                  aria-selected="false"
-                  >Approved</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link"
-                  id="declined-tab"
-                  data-toggle="tab"
-                  href="#declined"
-                  aria-controls="declined"
-                  role="tab"
-                  aria-selected="false"
-                  >Declined</a
-                >
-              </li>
-            </ul>
-            <div class="tab-content">
-              <div class="tab-pane active" id="pending" aria-labelledby="pending-tab" role="tabpanel">
-                <table class="datatables-basic partnerTable table">
-                  <thead>
-                    <tr>
-                      <th></th>
-                      <th></th>
-                      <th>id</th>
-                      <th>Name</th>
-                      <th>Email</th>
-                      <th>Contact No.</th>
-                      <th>Email Verified</th>
-                      <th class="text-center">Action</th>
-                    </tr>
-                  </thead>
-                </table>
-              </div>
-              <div class="tab-pane" id="approved" aria-labelledby="approved-tab" role="tabpanel">
-                <table class="datatables-basic-approved table">
-                  <thead>
-                    <tr>
-                      <th></th>
-                      <th>id</th>
-                      <th>Name</th>
-                      <th>Email</th>
-                      <th>Contact No.</th>
-                      <th>Email Verified</th>
-                    
-                    </tr>
-                  </thead>
-                </table>
-              </div>
-              <div class="tab-pane" id="declined" aria-labelledby="declined-tab" role="tabpanel">
-                <table class="datatables-basic-declined table">
-                  <thead>
-                    <tr>
-                      <th></th>
-                      <th>id</th>
-                      <th>Name</th>
-                      <th>Email</th>
-                      <th>Contact No.</th>
-                      <th>Email Verified</th>
-                   
-                    </tr>
-                  </thead>
-                </table>
-              </div>
-            </div>
+          <div class="">
+            <table class="location-table table">
+              <thead>
+                <tr>
+                  <th>Parking Address</th>
+                  <th>Parking Slots</th>
+                  <th>Amount</th>
+                  <th>Status</th>
+                  <th class="text-center">Action</th>
+                </tr>
+              </thead>
+            </table>
           </div>
         </div>
-      </div>
     </div>
+  </div>
   <!-- Edit modal -->
 	<div class="modal" id="modalPartner">
 		<div class="modal-dialog modal-dialog-centered  modal-lg" role="document">
@@ -188,6 +110,6 @@
 @section('page-script')
   {{-- Page js files --}}
   <script src="{{asset('js/scripts/components/components-navs.js')}}"></script>
-  <script src="{{ asset(mix('js/scripts/request-partner/request-partner-crud.js')) }}"></script>
+  <script src="{{ asset(mix('js/scripts/location/location-crud.js')) }}"></script>
   
 @endsection
