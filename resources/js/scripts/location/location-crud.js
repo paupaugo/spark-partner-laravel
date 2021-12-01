@@ -5,7 +5,7 @@
  $(function () {
     'use strict';
   
-    var dt_parking_activites_table = $('.parking-activites-table'),
+    var dt_parking_activites_table = $('.location-table'),
     
       assetPath = '../../../app-assets/';
   
@@ -20,8 +20,8 @@
       var dt_basic = dt_parking_activites_table.DataTable({
         columns: [
             // used for sorting so will hide this column
-          { data: 'name' },
           { data: 'parking_address' },
+          { data: 'parking_slots' },
           { data: 'amount' },
           { data: 'status' }
         ],
@@ -64,49 +64,16 @@
         lengthMenu: [10, 25, 50, 75, 100],
         buttons: [
             {
-              extend: 'collection',
-              className: 'btn btn-outline-secondary dropdown-toggle',
-              text: feather.icons['share'].toSvg({ class: 'font-small-4 mr-50' }) + 'Export',
-              buttons: [
-                {
-                  extend: 'print',
-                  text: feather.icons['printer'].toSvg({ class: 'font-small-4 mr-50' }) + 'Print',
-                  className: 'dropdown-item',
-                  exportOptions: { columns: [3, 4, 5, 6, 7] }
-                },
-                {
-                  extend: 'csv',
-                  text: feather.icons['file-text'].toSvg({ class: 'font-small-4 mr-50' }) + 'Csv',
-                  className: 'dropdown-item',
-                  exportOptions: { columns: [3, 4, 5, 6, 7] }
-                },
-                {
-                  extend: 'excel',
-                  text: feather.icons['file'].toSvg({ class: 'font-small-4 mr-50' }) + 'Excel',
-                  className: 'dropdown-item',
-                  exportOptions: { columns: [3, 4, 5, 6, 7] }
-                },
-                {
-                  extend: 'pdf',
-                  text: feather.icons['clipboard'].toSvg({ class: 'font-small-4 mr-50' }) + 'Pdf',
-                  className: 'dropdown-item',
-                  exportOptions: { columns: [3, 4, 5, 6, 7] }
-                },
-                {
-                  extend: 'copy',
-                  text: feather.icons['copy'].toSvg({ class: 'font-small-4 mr-50' }) + 'Copy',
-                  className: 'dropdown-item',
-                  exportOptions: { columns: [3, 4, 5, 6, 7] }
+                text: feather.icons['plus'].toSvg({ class: 'mr-50 font-small-4' }) + 'Add Parking Slot',
+                className: 'create-new btn btn-primary',
+                action: function ( e, dt, button, config ) {
+                    window.location = 'create-content';
+                  },       
+                init: function (api, node, config) {
+                  $(node).removeClass('btn-secondary');
                 }
-              ],init: function (api, node, config) {
-                $(node).removeClass('btn-secondary');
-                $(node).parent().removeClass('btn-group');
-                setTimeout(function () {
-                  $(node).closest('.dt-buttons').removeClass('btn-group').addClass('d-inline-flex');
-                }, 50);
-              }
-            },
-          ],
+            }
+        ],
         language: {
           paginate: {
             // remove previous & next text from pagination
@@ -115,7 +82,7 @@
           }
         }
       });
-      $('div.head-label').html('<h4 class="mb-0"><strong>Parking Activites</strong></h4>');
+      $('div.head-label').html('<h4 class="mb-0"><strong>List of Parking Slot</strong></h4>');
     }
    
 

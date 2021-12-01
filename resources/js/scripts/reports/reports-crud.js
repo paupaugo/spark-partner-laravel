@@ -5,7 +5,7 @@
  $(function () {
     'use strict';
   
-    var dt_parking_activites_table = $('.parking-activites-table'),
+    var dt_parking_activites_table = $('.reports-table'),
     
       assetPath = '../../../app-assets/';
   
@@ -115,7 +115,7 @@
           }
         }
       });
-      $('div.head-label').html('<h4 class="mb-0"><strong>Parking Activites</strong></h4>');
+      $('div.head-label').html('<h4 class="mb-0"><strong>Daily Reports</strong></h4>');
     }
    
 
