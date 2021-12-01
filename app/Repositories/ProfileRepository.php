@@ -34,7 +34,7 @@ class ProfileRepository implements IProfileRepository
             }
 
             $file= new OwnerFileModel();
-            $file->files_owner_id = Auth::user()->owner_account_id;
+            $file->files_owner_id = Auth::user()->owner_id;
             $file->files_name=json_encode($data);
             $file->save();
         

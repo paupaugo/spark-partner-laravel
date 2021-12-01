@@ -11,13 +11,16 @@ class User extends Authenticatable implements MustVerifyEmail
 {
     use HasFactory, Notifiable;
 
+    protected $table = "tbl_owner_data";
+    protected $primaryKey = 'owner_id';
+    
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'name',
+        'owner_firstname',
         'email',
         'password',
     ];

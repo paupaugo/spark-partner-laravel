@@ -22,7 +22,7 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        $partner_id = Auth::user()->owner_account_id;
+        $partner_id = Auth::user()->owner_id;
         $partnerDetails = $this->partner->getProfileById($partner_id);
         //
         $pageConfigs = ['pageHeader' => false];

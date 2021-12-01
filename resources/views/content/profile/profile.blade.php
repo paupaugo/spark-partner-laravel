@@ -34,7 +34,7 @@
                                 <div class="col-lg-7 col-md-7 col-sm-7 pt-1">
                                
                                     <h3 class="text-bold"><b>{{ $object->owner_firstname.' '.$object->owner_middlename.' '.$object->owner_lastname }}</b></h3>
-                                    <p>{{ $object->owner_email }}</p>
+                                    <p>{{ $object->email }}</p>
                                     <p>{{ '+63'.$object->owner_contact_no }}</p>
                                 
                                 </div>
@@ -78,7 +78,7 @@
                         <div class="col-xl-4 col-md-6 col-12 mb-1">
                             <div class="form-group">
                                 <label for="email">Email Address</label>
-                                <input type="text" name="email" class="form-control" id="email" value="{{ $object->owner_email}} "  readonly />
+                                <input type="text" name="email" class="form-control" id="email" value="{{ $object->email}} "  readonly />
                                 <div class="badge badge-light-success mt-1">
                                     <i data-feather="check-circle" class="mr-25"></i>
                                     <span>Email verified</span>
