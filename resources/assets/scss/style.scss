@@ -102,3 +102,70 @@ div#demo {
 .login-container {
   z-index: 2;
 }
+
+
+// REFERRED PROFITS //
+
+/*Clearing Floats*/
+.cf:before, .cf:after{
+  content:"";
+  display:table;
+}
+.cf:after{
+  clear:both;
+}
+
+/* Form wrapper styling */
+.copy-wrapper {
+  width: 450px;
+  border-radius: 5px;
+  border: 1px solid #e9e9e9;
+}
+.copy-wrapper input {
+padding-left: 20px;
+  width: 330px;
+  height: 40px;
+  padding: 10px 5px;
+  float: left;
+  border: 0;
+  background: #fff;
+  border-top-style: none;
+}
+
+.copy-wrapper input::-webkit-input-placeholder {
+ color: #999;
+ font-weight: normal;
+ font-style: italic;
+padding-left: 10px;
+}
+
+.copy-wrapper input:-moz-placeholder {
+  
+  color: #999;
+  font-weight: normal;
+  font-style: italic;
+}
+
+.copy-wrapper input:-ms-input-placeholder {
+  color: #999;
+  font-weight: normal;
+  font-style: italic;
+  border-style: none;
+}   
+
+/* Form copy button */
+.copy-wrapper button {
+    overflow: visible;
+    position: relative;
+    float: right;
+    border: 0;
+    padding: 0;
+    margin: 3px;
+    cursor: pointer;
+    height: 35px;
+    width: 80px;
+    text-transform: uppercase;
+    background: #f3f2f7;
+    border-radius: 5px;
+    color: #6e6b7b;
+}  
