@@ -65,13 +65,14 @@
         buttons: [
             {
                 text: feather.icons['plus'].toSvg({ class: 'mr-50 font-small-4' }) + 'Add Parking Slot',
-                className: 'create-new btn btn-primary',
+                className: 'create-new-location btn btn-primary',
                 action: function ( e, dt, button, config ) {
                     window.location = 'create-content';
                   },       
                 init: function (api, node, config) {
                   $(node).removeClass('btn-secondary');
-                }
+                },
+              
             }
         ],
         language: {
@@ -85,7 +86,7 @@
       $('div.head-label').html('<h4 class="mb-0"><strong>List of Parking Slot</strong></h4>');
     }
    
-
+    $('.create-new-location').attr("disabled", true);
     
 
  

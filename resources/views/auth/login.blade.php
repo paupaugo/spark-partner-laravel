@@ -11,11 +11,11 @@
 <div class="auth-wrapper auth-v1 px-2">
   <div class="auth-inner py-2">
     <!-- Login v1 -->
-    <div class="card mb-0">
+    <div class="card mb-0 login-container">
       <div class="card-body">
         <a href="javascript:void(0);" class="brand-logo">
         
-          <h2 class="brand-text text-primary ml-1">Spark</h2>
+          <h2 class="brand-text text-primary ml-1">SPARK</h2>
         </a>
 
         <!-- <h4 class="card-title mb-1">Welcome to Spark! 👋</h4> -->
@@ -37,9 +37,9 @@
             <div class="d-flex justify-content-between">
               <label for="login-password">Password</label>
               @if (Route::has('password.request'))
-              <a href="{{ route('password.request') }}">
+              <!-- <a href="{{ route('password.request') }}">
                 <small>Forgot Password?</small>
-              </a>
+              </a> -->
               @endif
             </div>
             <div class="input-group input-group-merge form-password-toggle">
@@ -61,7 +61,7 @@
         <p class="text-center mt-2">
           <span>New on our platform?</span>
           @if (Route::has('register'))
-          <a href="{{ route('register') }}">
+          <a href="https://register-partner.sparkph.net/">
             <span>Create an account</span>
           </a>
           @endif
@@ -88,6 +88,7 @@
       </div>
     </div>
     <!-- /Login v1 -->
+    <img src="{{asset('images/svg/login-bot-bg.svg')}}" alt="parking" class="login-fix-img"/>
   </div>
 </div>
 @endsection

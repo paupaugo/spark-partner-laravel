@@ -75,6 +75,7 @@ mix
   .js('resources/js/scripts/request-partner/request-partner-crud.js', 'public/js/scripts/request-partner')
   .js('resources/js/scripts/dashboard/dashboard-crud.js', 'public/js/scripts/dashboard')
   .js('resources/js/scripts/dashboard/dashboard-function.js', 'public/js/scripts/dashboard')
+  .js('resources/js/scripts/location/location-crud.js', 'public/js/scripts/location')
   .sass('resources/sass/core.scss', 'public/css', {sassOptions})
   .sass('resources/sass/overrides.scss', 'public/css', {sassOptions})
   .sass('resources/sass/base/custom-rtl.scss', 'public/css', {sassOptions})

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AppsController;
-use App\Http\Controllers\UserInterfaceController;
+use App\Http\Controllers\ActivityLogController;
 use App\Http\Controllers\PageLayoutController;
 use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\ReferredProfitController;
@@ -28,7 +28,7 @@ use Illuminate\Support\Facades\Auth;
 
 // Main Page Route
 // Route::get('/', [DashboardController::class,'dashboardEcommerce'])->name('dashboard-ecommerce')->middleware('verified');
-Route::get('/', [DashboardController::class,'dashboardAnalytics'])->name('dashboard-analytics');
+Route::get('/', [DashboardController::class,'dashboardAnalytics'])->name('dashboard-analytics')->middleware('verified');
 
 Auth::routes(['verify' => true]);
 
@@ -63,12 +63,12 @@ Route::group(['prefix' => 'auth'], function () {
   Route::get('profile', [ProfileController::class,'index'])->name('profile')->middleware('verified');
   Route::post('file', [ProfileController::class,'store'])->name('file')->middleware('verified');
 
-  Route::get('location', [LocationController::class,'index'])->name('location');
-  Route::get('request', [RequestController::class,'index'])->name('request');
-  Route::get('profit', [ProfitController::class,'index'])->name('profit');
-  Route::get('report', [ReportController::class,'index'])->name('report');
-  Route::get('referred-profit', [ReferredProfitController::class,'index'])->name('referred-profit');
-  Route::get('activity-log', [RequestController::class,'index'])->name('activity-log');
+  Route::get('location', [LocationController::class,'index'])->name('location')->middleware('verified');
+  Route::get('request', [RequestController::class,'index'])->name('request')->middleware('verified');
+  Route::get('profit', [ProfitController::class,'index'])->name('profit')->middleware('verified');
+  Route::get('report', [ReportController::class,'index'])->name('report')->middleware('verified');
+  Route::get('referred-profit', [ReferredProfitController::class,'index'])->name('referred-profit')->middleware('verified');
+  Route::get('activity-log', [ActivityLogController::class,'index'])->name('activity-log')->middleware('verified');
   
 
 

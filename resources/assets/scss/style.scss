@@ -88,3 +88,17 @@ div#demo {
   font-weight: 600;
   margin-bottom: 10px;
 }
+
+//LOGIN
+.login-fix-img {
+  position:fixed;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    height: 250px;
+    width: 100%;
+    z-index: 1;
+}
+.login-container {
+  z-index: 2;
+}
