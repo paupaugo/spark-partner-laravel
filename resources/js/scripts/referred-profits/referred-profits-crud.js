@@ -26,15 +26,10 @@
         { data: 'status' }
       ],
       columnDefs: [
-       
         {
-       
           targets: 0,
-          orderable: false,
-          
+          orderable: false,  
         },
-        
-       
         {
           // Label
           targets: 2,

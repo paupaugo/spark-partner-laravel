@@ -24,14 +24,14 @@
     <div class="card">
         <div class="card-body text-center">
             <div class="profits-content1">
-                ₱ 34,970.00
+                ₱ 0.00
             </div>
             <div class="profits-content2">
                 Total Profits
             </div>
             <div class="dt-action-buttons">
                 <div class="dt-buttons">
-                    <button class="dt-button create-new btn btn-primary" tabindex="0" aria-controls="DataTables_Table_0" type="button">
+                    <button class="dt-button create-new btn btn-primary" tabindex="0" aria-controls="DataTables_Table_0" type="button" disabled>
                         <span>Cashout</span>
                     </button> 
                 </div>

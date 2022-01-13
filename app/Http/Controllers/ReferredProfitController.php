@@ -1,11 +1,19 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Auth;
+use App\Interfaces\IDashboardRepository;
 
 use Illuminate\Http\Request;
 
 class ReferredProfitController extends Controller
 {
+    private IDashboardRepository $dashboardRepository;
+
+    public function __construct(IDashboardRepository $dashboardRepository) 
+    {
+        $this->dashboardRepository = $dashboardRepository;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,9 +22,11 @@ class ReferredProfitController extends Controller
     public function index()
     {
         //
+        $partner_id = Auth::user()->owner_id;
+        $partnerQRCode = $this->dashboardRepository->getQRCode($partner_id);
         $pageConfigs = ['pageHeader' => false];
 
-        return view('/content/referred-profit/referred-profit', ['pageConfigs' => $pageConfigs]);
+        return view('/content/referred-profit/referred-profit', ['pageConfigs' => $pageConfigs], compact('partnerQRCode'));
     }
 
     /**

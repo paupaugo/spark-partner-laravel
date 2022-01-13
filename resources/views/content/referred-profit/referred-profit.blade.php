@@ -26,10 +26,12 @@
             <div class="referred-profits-container clearfix">
                 <h4><strong>Referral Code</strong></h4>
                 <p>Invite your friends and relatives and give your referral code.</p>
-                <form class="copy-wrapper cf">
-                    <input type="text" id="qrcodelink" class="form-control" value="" />
-                    <button type="submit">Copy</button>
-                </form>
+                @foreach ($partnerQRCode as $object)
+                  <form class="copy-wrapper cf">
+                      <input type="text" id="qrcodelink" class="form-control" value=" {{ 'https://register-partner.sparkph.net/?referral-code='.$object->owner_referral_code }} " />
+                      <button type="submit" id="btn-copy">Copy</button>
+                  </form>
+                @endforeach
             </div>
         </div>
     </div>
@@ -123,5 +125,11 @@
   {{-- Page js files --}}
   <script src="{{asset('js/scripts/components/components-navs.js')}}"></script>
   <script src="{{ asset(mix('js/scripts/referred-profits/referred-profits-crud.js')) }}"></script>
+  <script>
+    $("#btn-copy").click(function(){
+      $temp = $("#qrcodelink").select();
+      document.execCommand("copy");
+    });
+  </script>
   
 @endsection
