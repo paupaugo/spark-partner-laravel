@@ -42,3 +42,38 @@ WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR STYLES IT'S BET
 .match-height > [class*=col] > .card {
   flex: none !important;
 }
+
+/**ADDED CSS**/
+.card {
+  border: none;
+  margin-bottom: 0.7rem;
+}
+.sparknews_container {
+  padding: 15px;
+}
+.card-available-parking{
+  background: linear-gradient(
+118deg, #ffe991, #ffe991) !important;
+   
+}
+.spark-news-carousel{
+  background-image: linear-gradient(to right, #7dab22, #1e9c1b);
+  color: #fff;
+  border-radius: 4px 4px 0 0;
+  padding: 5px;
+}
+.carousel-inner img {
+  width: 100%;
+  height: 100%;
+}
+div#demo {
+  height: 350px;
+  background: black;
+}
+
+.col-lg-3.advertisement_slot {
+  padding: 0;
+}
+.advertisement_slot .ads_container{
+  height: 100vh;
+}

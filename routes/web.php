@@ -5,21 +5,14 @@ use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AppsController;
 use App\Http\Controllers\UserInterfaceController;
-use App\Http\Controllers\CardsController;
-use App\Http\Controllers\ComponentsController;
-use App\Http\Controllers\ExtensionController;
 use App\Http\Controllers\PageLayoutController;
-use App\Http\Controllers\FormsController;
-use App\Http\Controllers\TableController;
-use App\Http\Controllers\PagesController;
-use App\Http\Controllers\MiscellaneousController;
 use App\Http\Controllers\AuthenticationController;
-use App\Http\Controllers\ChartsController;
-use App\Http\Controllers\RequestPartnerController;
-use App\Http\Controllers\AnalyticsController;
-use App\Http\Controllers\RequestBookerController;
-use App\Http\Controllers\ContentManagementController;
-use App\Http\Controllers\SettingController;
+use App\Http\Controllers\ReferredProfitController;
+use App\Http\Controllers\ReportController;
+use App\Http\Controllers\ProfitController;
+use App\Http\Controllers\RequestController;
+use App\Http\Controllers\LocationController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -52,7 +45,6 @@ Route::group(['prefix' => 'app'], function () {
 });
 /* Route Apps */
 
-
 /* Route Authentication Pages */
 Route::group(['prefix' => 'auth'], function () {
   Route::get('login-v1', [AuthenticationController::class,'login_v1'])->name('auth-login-v1');
@@ -66,6 +58,18 @@ Route::group(['prefix' => 'auth'], function () {
   Route::get('lock-screen', [AuthenticationController::class,'lock_screen'])->name('auth-lock_screen');
 });
 /* Route Authentication Pages */
+
+
+  Route::get('profile', [ProfileController::class,'index'])->name('profile')->middleware('verified');
+  Route::post('file', [ProfileController::class,'store'])->name('file')->middleware('verified');
+
+  Route::get('location', [LocationController::class,'index'])->name('location');
+  Route::get('request', [RequestController::class,'index'])->name('request');
+  Route::get('profit', [ProfitController::class,'index'])->name('profit');
+  Route::get('report', [ReportController::class,'index'])->name('report');
+  Route::get('referred-profit', [ReferredProfitController::class,'index'])->name('referred-profit');
+  Route::get('activity-log', [RequestController::class,'index'])->name('activity-log');
+  
 
 
 

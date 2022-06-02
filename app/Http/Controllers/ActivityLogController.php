@@ -14,6 +14,9 @@ class ActivityLogController extends Controller
     public function index()
     {
         //
+        $pageConfigs = ['pageHeader' => false];
+
+        return view('/content/activity-log/activity-log', ['pageConfigs' => $pageConfigs]);
     }
 
     /**
