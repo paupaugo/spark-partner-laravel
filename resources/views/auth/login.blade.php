@@ -61,7 +61,7 @@
         <p class="text-center mt-2">
           <span>New on our platform?</span>
           @if (Route::has('register'))
-          <a href="{{ route('register') }}">
+          <a href="https://sparkph.tech/signup/">
             <span>Create an account</span>
           </a>
           @endif
