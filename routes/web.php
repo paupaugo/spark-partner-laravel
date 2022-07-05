@@ -27,8 +27,8 @@ use Illuminate\Support\Facades\Auth;
 */
 
 // Main Page Route
-// Route::get('/', [DashboardController::class,'dashboardEcommerce'])->name('dashboard-ecommerce')->middleware('verified');
-Route::get('/', [DashboardController::class,'dashboardAnalytics'])->name('dashboard-analytics');
+Route::get('/', [DashboardController::class,'dashboardEcommerce'])->name('dashboard-ecommerce')->middleware('verified');
+// Route::get('/', [DashboardController::class,'dashboardAnalytics'])->name('dashboard-analytics');
 
 Auth::routes(['verify' => true]);
 
