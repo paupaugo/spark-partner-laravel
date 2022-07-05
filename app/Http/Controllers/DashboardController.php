@@ -17,6 +17,7 @@ class DashboardController extends Controller
   // Dashboard - Analytics
   public function dashboardAnalytics()
   {
+    $partner_id = 0;
     if (Auth::check())
     {
     $partner_id = Auth::user()->owner_id;
