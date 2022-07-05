@@ -17,9 +17,10 @@ class DashboardController extends Controller
   // Dashboard - Analytics
   public function dashboardAnalytics()
   {
-
-    // $partner_id = Auth::user()->owner_id;
-    $partner_id = 7;
+    if (Auth::check())
+    {
+    $partner_id = Auth::user()->owner_id;
+    }
     $partnerQRCode = $this->dashboardRepository->getQRCode($partner_id);
     $partnerNews = $this->dashboardRepository->getContentNews();
     $pageConfigs = ['pageHeader' => false];
